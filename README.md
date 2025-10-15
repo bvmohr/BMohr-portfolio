@@ -10,3 +10,9 @@
 ## IBM Final Project
 
 This [portfolio](https://bvmohr.github.io/BMohr-portfolio/) started as a final project from IBM's Introduction to HTML, CSS, and JavaScript course. It is currently in development as I improve my skills. 
+
+## Current Updates
+
+I have since gone from the basic HTML, CSS, and JS template provided from the final project and have switched to using Tailwind CSS to understand utility-first frameworks.
+
+The new HTML file of the portfolio is ```./index.html```

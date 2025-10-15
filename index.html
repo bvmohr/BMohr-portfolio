@@ -1,190 +1,288 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Brian Mohr - Portfolio</title>
-    <link rel="stylesheet" href="./style.css"/>
-    <script src="./script.js"></script>
-  </head>
-  <body>
-    <!-- Navigation Bar -->
-    <nav>
-      <div id="home">
-        <div class="profile_name">
-          Brian Mohr
-          <div class="contact_info">
-            <img src="html_finalprojimages/envelope.png" alt="https://icons8.com/icon/124377/circled-envelope"/>
-          bmohr@example.com
-        </div>
-        <div style="clear:both;"></div>
-        <div class="contact_info">
-          <img src="html_finalprojimages/phone.png" alt="https://icons8.com/icon/124377/circled-envelope"/>
-          +13456764598
-
-        </div>
-        </div>
-        <div class="topdiv">
-          <a class="topmenu" href="#about-me">About Me</a>
-          <!-- Add the links for Skills, Projects and Recommendation here -->
-          <a class="topmenu" href="#skills">Skills</a>
-          <a class="topmenu" href="#projects">Projects</a>
-          <a class="topmenu" href="#recommendations">Recommendations</a>
-
-        </div>
-      </div>    
-    </nav>
-
-    <!-- About Me -->
-    <section id="about-me" class="container">
-      <div>
-        <img src="html_finalprojimages/blackbird.png" class="profile_image"/>
-      </div>
-
-      <div>
-          <h1>
-            Hi, I'm Brian Mohr! <img src="html_finalprojimages/waving-hand.png" width="60px"/>
-          </h1>
-          <p>
-            I am a recent computer science graduate looking for entry-level software development roles!
-            I have been working towards obtaining the IBM Full Stack Developer Certification!
-          </p>
-      </div>
-    </section>
-              
-    <!-- Skills -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <div style="clear:both;"></div>
-
-      <div class="all_skills">
-
-        <div class="skill">
-          <img src="html_finalprojimages/Java.png"/>
-          <h6>Java</h6>
-          <p>3 years experience</p>
-        </div> 
-
-        <div class="skill">
-          <img src="html_finalprojimages/cpp_logo.png"/>
-          <h6>C++</h6>
-          <p>3 years experience</p>
-        </div> 
-
-        <div class="skill">
-          <img src="html_finalprojimages/python.png"/>
-          <h6>Python</h6>
-          <p>2 years experience</p>
-        </div> 
-
-        <div class="skill">
-          <img src="html_finalprojimages/html5.png"/>
-          <h6>HTML</h6>
-          <p>1 years experience</p>
-        </div>  
-
-        <div class="skill">
-          <img src="html_finalprojimages/js.jpeg"/>
-          <h6>JavaScript</h6>
-          <p>1 years experience</p>
-        </div>  
-
-        <!-- Add more skills here -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brian Mohr | Portfolio</title>
+    <!-- Load Tailwind CSS from CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configure Tailwind to use Inter font and enable dark mode styles -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        // UPDATED PALETTE FOR RICHER EARTH TONES
+                        'primary': '#A68B5F', // Rich Muted Tan/Gold
+                        'secondary': '#E2DFDA', // Light Beige
+                        'background': '#2F4F4F', // Dark Slate Green (Header BG, Main Text)
+                        'card': '#F4F0E8', // Warm Off-White (Card BG)
+                        'counter': '#695C48' // NEW: Deep Sepia Brown/Grey (Sub-text/Accent)
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: #A68B5F; /* primary */
+            border-radius: 4px;
+        }
+        /* Base styles */
+        body {
+            background-color: #E2DFDA; /* secondary - Light background */
+            /* Text color set to the dark background color for contrast */
+            color: #2F4F4F; /* background */
+            scroll-behavior: smooth;
+        }
+        /* Smooth transitions for links/buttons */
+        .transition-all {
+            transition: all 0.3s ease-in-out;
+        }
         
+        /* Custom utility class definition */
+        /* Skill badges use the light card background and dark background text */
+        .skill-badge {
+            background-color: #F4F0E8; /* card */
+            color: #2F4F4F; /* background */
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 9999px; /* rounded-full */
+            font-weight: 500; /* font-medium */
+            font-size: 0.875rem; /* text-sm */
+            border: 1px solid #A68B5F; /* border-primary */
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1); /* shadow-md */
+            transition: all 0.3s ease-in-out; 
+            transform: scale(1);
+            cursor: default;
+        }
+        .skill-badge:hover {
+            background-color: #A68B5F; /* primary */
+            color: #E2DFDA; /* secondary (light text for contrast) */
+            transform: scale(1.05);
+        }
 
-      </div>
-    </section>
-          
-    <!-- Projects -->
-    <section class="projects" id="projects">
-      <h2>
-        Projects
-      </h2>
-      <div style="clear:both;"></div>
+        /* Overriding default gray text color used in sections to improve contrast on light body/card BGs */
+        .text-gray-400 {
+            color: #2F4F4F; /* Using background color for dark text */
+        }
+        
+    </style>
+</head>
+<body class="font-sans antialiased">
 
-        <div id="projects-container" class="projects-container">
-          <div class="project-card">
-            <h3>Game of Cells</h3>
-            <ul>
-              <li>Co-led development of a 2D real-time resource management game that teaches biology concepts to high school students.</li>
-              <li>Designed player mechanics and visual feedback systems to reinforce scientific accuracy in a fun, cartoonish environment.</li>
-              <li>Applied Scrum methodologies with Git for version control and sprint-based task management.</li>
-            </ul>
-          </div>
-          <hr>
-          <div class="project-card">
-            <h3>Sentiment Classification</h3>
-            <ul>
-              <li>Built a hybrid RNN model with BERT embeddings to classify IMDB reviews as positive or negative.</li>
-              <li>Achieved significant performance improvements over traditional RNN baselines by leveraging pre-trained language models.</li>
-              <li>Fine-tuned model parameters using PyTorch for optimal sequence classification.</li>
-            </ul>
-          </div>
-          <hr>
-          <div class="project-card">
-            <h3>Bluetooth WiFi Sharing</h3>
-            <ul>
-              <li>Developed a Bluetooth Low Energy (BLE) system for Raspberry Pi devices to share WiFi access across Duet air quality sensors.</li>
-              <li>Designed and implemented GATT service with encrypted read/write characteristics for network configuration.</li>
-              <li>Created and maintained Debian packages to integrate Bluetooth and WiFi software into TelosAir’s internal PiOS distribution.</li>
-            </ul>
-          </div>
-    </div>
-    </section>
-    <div style="clear:both;"></div>
-
-    <!-- Recommendations -->
-    <section id="recommendations">
-      <h2>Recommendations</h2>
-      <div style="clear:both;"></div>
-      <div class="all_recommendations" id="all_recommendations">
-        <div class="recommendation">
-          <span>&#8220;</span>
-          Brian is a very hard worker and is eager to make a positive impact in the software engineering field. 
-          He is adaptable, reliable, and diligent, a great asset to future employers!
-          <span>&#8221;</span>
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-background/90 backdrop-blur-sm shadow-lg border-b border-card">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Header elements use dark BG and light secondary text -->
+            <a href="#" class="text-2xl font-bold text-secondary hover:text-primary transition-all">
+                Brian Mohr
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-secondary hover:text-primary transition-all">About</a>
+                <a href="#skills" class="text-secondary hover:text-primary transition-all">Skills</a>
+                <a href="#projects" class="text-secondary hover:text-primary transition-all">Projects</a>
+            </nav>
+            <!-- Mobile Menu Button (Placeholder for JS functionality) -->
+            <button class="md:hidden text-secondary hover:text-primary transition-all">
+                <!-- Hamburger Icon SVG -->
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
         </div>
-        <div class="recommendation">
-          <span>&#8220;</span>
-          Working with Brian has been a great pleasure of mine! 
-          His ability to quickly assess issues within codebases and communicate clearly the required fixes is a great quality of his.
+    </header>
 
-          <span>&#8221;</span>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- 1. Hero Section -->
+        <section id="hero" class="py-24 md:py-36 text-center">
+            <h1 class="text-5xl sm:text-7xl font-extrabold text-background tracking-tight mb-4">
+                Hello, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-counter transition-all">Brian Mohr</span>
+            </h1>
+            <p class="text-xl sm:text-2xl text-counter mb-8 max-w-3xl mx-auto">
+                Software Developer | Focused on clean code and user experience.
+            </p>
+            <div class="flex justify-center space-x-4">
+                <a href="#projects" class="px-8 py-3 bg-primary text-background font-bold rounded-lg shadow-xl hover:bg-counter transition-all transform hover:scale-105">
+                    View My Work
+                </a>
+                <a href="./BMohr_Resume_2025.pdf" target="_blank" class="px-8 py-3 bg-card border border-primary text-primary font-bold rounded-lg hover:bg-primary/20 transition-all transform hover:scale-105">
+                    Download Resume
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. About Me Section -->
+        <section id="about" class="py-16 border-t border-card">
+            <h2 class="text-4xl font-bold text-center mb-12 text-primary">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-12">
+                <!-- Profile Image Placeholder -->
+                <div class="flex-shrink-0 mb-8 md:mb-0">
+                    <div class="w-48 h-48 rounded-full bg-card flex items-center justify-center border-4 border-primary shadow-2xl">
+                        <!-- Image uses background color for the ring and card for the inner BG -->
+                        <img class="w-48 h-48 rounded-full bg-card flex items-center justify-center border-4 border-primary shadow-2xl" src="https://media.licdn.com/dms/image/v2/D5603AQHfWskyqQNr6w/profile-displayphoto-scale_200_200/B56ZildCx2HcAY-/0/1755122516354?e=1763596800&v=beta&t=T1S4VTyVSuhJP7BI5KEGlV81cuX1XHqijbiSEjs5sps" onerror="this.onerror=null;this.src='https://placehold.co/192x192/F4F0E8/2F4F4F?text=B'"/>
+                    </div>
+                </div>
+                <div class="md:w-2/3 text-lg text-counter space-y-4">
+                    <p>
+                        I am a passionate software engineer with 4+ years of experience in object-oriented programming and application development. My journey began with a goal for designing and implementing software that contributes meaningfully to the industry. Now, I am ready to take what I have learned and develop high-performance software.
+                    </p>
+                    <p>
+                        While my expertise lies in object-oriented programming, mostly from my academeics, my attention has been drawn to full-stack development. As such, I am currently working towards IBM's Full Stack Developer certification. I believe that the best code is clean, well-tested, and maintainable. I'm always looking for opportunities to learn new technologies and improve my skills.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Skills Section -->
+        <section id="skills" class="py-16 border-t border-card">
+            <h2 class="text-4xl font-bold text-center mb-12 text-primary">Technical Skills</h2>
+            <div class="space-y-10">
+                <!-- Porgramming Langauges Skills -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-background">Programming Languages</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="skill-badge">Java</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">HTML5 & CSS3</span>
+                        <span class="skill-badge">Tailwind CSS</span>
+                        <span class="skill-badge">React</span>
+                        <span class="skill-badge">C++</span>
+                        <span class="skill-badge">MySQL</span>
+
+                    </div>
+                </div>
+
+                <!-- AI Machine Learning Skills -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-background">Backend & Database</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="skill-badge">TensorFlow</span>
+                        <span class="skill-badge">PyTorch</span>
+                        <span class="skill-badge">BERT</span>
+                        <span class="skill-badge">RNN</span>
+                        <span class="skill-badge">LLM Training</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Development -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-background">Development</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="skill-badge">Git & GitHub</span>
+                        <span class="skill-badge">Full-stack</span>
+                        <span class="skill-badge">Gradle</span>
+                        <span class="skill-badge">Agile</span>
+                        <span class="skill-badge">Object-Oriented Programming (OOP)</span>
+                        <span class="skill-badge">Unit Testing</span>
+                    </div>
+                </div>
+
+                <!-- Operating Sysstems -->
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6 text-background">Operating Systems</h3>
+                    <div class="flex flex-wrap gap-4">
+                        <span class="skill-badge">Linux</span>
+                        <span class="skill-badge">Unix</span>
+                        <span class="skill-badge">Windows</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 4. Projects Section -->
+        <section id="projects" class="py-16 border-t border-card">
+            <h2 class="text-4xl font-bold text-center mb-12 text-primary">Featured Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project Card 1: E-commerce Platform -->
+                <div class="bg-card p-6 rounded-xl shadow-2xl hover:shadow-primary/50 transition-all transform hover:-translate-y-1 border border-card/80">
+                    <h3 class="text-2xl font-bold mb-3 text-background">Example</h3>
+                    <p class="text-counter mb-4 h-20 overflow-hidden">
+                       Example description
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">1</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">2</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">3</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">4</span>
+                    </div>
+                    <div class="flex justify-start space-x-3">
+                        <a href="#" target="_blank" class="text-primary hover:text-background font-medium transition-all flex items-center">
+                            Code (GitHub)
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-2h4m0 0l-4-4m4 4L11 6"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Real-time Chat App -->
+                <div class="bg-card p-6 rounded-xl shadow-2xl hover:shadow-primary/50 transition-all transform hover:-translate-y-1 border border-card/80">
+                    <h3 class="text-2xl font-bold mb-3 text-background">Example 2</h3>
+                    <p class="text-counter mb-4 h-20 overflow-hidden">
+                        Example description
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">1</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">2</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">3</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">4</span>
+                    </div>
+                    <div class="flex justify-start space-x-3">
+                        <a href="#" target="_blank" class="text-primary hover:text-background font-medium transition-all flex items-center">
+                            Code (GitHub)
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-2h4m0 0l-4-4m4 4L11 6"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Data Visualization Tool -->
+                <div class="bg-card p-6 rounded-xl shadow-2xl hover:shadow-primary/50 transition-all transform hover:-translate-y-1 border border-card/80">
+                    <h3 class="text-2xl font-bold mb-3 text-background">Example 3</h3>
+                    <p class="text-counter mb-4 h-20 overflow-hidden">
+                        Example description
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">1</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">2</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">3</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">4</span>
+                    </div>
+                    <div class="flex justify-start space-x-3">
+                        <a href="#" target="_blank" class="text-primary hover:text-background font-medium transition-all flex items-center">
+                            Code (GitHub)
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-2h4m0 0l-4-4m4 4L11 6"></path></svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-card mt-16 border-t border-card">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+            <div class="flex justify-center space-x-6 mb-4">
+                <!-- Links now use the dark background color with the primary accent on hover -->
+                <a href="https://github.com/bvmohr" target="_blank" class="text-background hover:text-primary transition-colors">GitHub</a>
+                <a href="https://linkedin.com/in/brian-v-mohr" target="_blank" class="text-background hover:text-primary transition-colors">LinkedIn</a>
+                <a href="mailto:bvmohr2@gmail.com" class="text-background hover:text-primary transition-colors">Email</a>
+            </div>
+            <p class="text-sm text-counter">
+                &copy; 2025 Brian Mohr. Developed with Tailwind CSS.
+            </p>
         </div>
-        <div class="recommendation">
-          <span>&#8220;</span>
-          Brian is a quick learner who enjoys a steady stream of projects. 
-          While he is knowledgeable, his ability to share his understanding is impressive! He certainly makes a great squadmate!
-          <span>&#8221;</span>
-        </div>
-      </div>
-    </section>
+    </footer>
 
-    <!-- Recommendation Form -->
-    <section id="contact">
-      <div class="flex_center">
-        <fieldset>
-          <legend class="introduction">Leave a Recommendation</legend>          
-          <input type="text" placeholder="Name (Optional)"> <br/>
-          <textarea id="new_recommendation" cols="500" rows="10" placeholder="Message"></textarea>
-          <div class="flex_center">
-            <button id="recommend_btn" onclick="addRecommendation()">Submit</button>
-          </div>
-        </fieldset>
-      </div>
-    </section>
-
-    <div class="iconbutton">
-      <a href="#home">
-        <!--Add the code here for the logo to appear and the icon to be actionable-->
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" width="63px">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      </a>
-    </div>
-
-    <div class="popup" id="popup" class="flex_center">
-      <img src="html_finalprojimages/checkmark--outline.svg"/>
-      <h3>Thanks for leaving a recommendation!</h3>
-      <button onclick="showPopup(false)">Ok</button>
-    </div>
-  </body>
+</body>
 </html>
