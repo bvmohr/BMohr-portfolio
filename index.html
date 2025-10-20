@@ -15,12 +15,11 @@
                         sans: ['Inter', 'sans-serif'],
                     },
                     colors: {
-                        // UPDATED PALETTE FOR RICHER EARTH TONES
                         'primary': '#A68B5F', // Rich Muted Tan/Gold
                         'secondary': '#E2DFDA', // Light Beige
                         'background': '#2F4F4F', // Dark Slate Green (Header BG, Main Text)
                         'card': '#F4F0E8', // Warm Off-White (Card BG)
-                        'counter': '#695C48' // NEW: Deep Sepia Brown/Grey (Sub-text/Accent)
+                        'counter': '#695C48' // Deep Sepia Brown/Grey (Sub-text/Accent)
                     }
                 }
             }
@@ -48,7 +47,6 @@
         }
         
         /* Custom utility class definition */
-        /* Skill badges use the light card background and dark background text */
         .skill-badge {
             background-color: #F4F0E8; /* card */
             color: #2F4F4F; /* background */
@@ -71,7 +69,6 @@
             transform: scale(1.05);
         }
 
-        /* Overriding default gray text color used in sections to improve contrast on light body/card BGs */
         .text-gray-400 {
             color: #2F4F4F; /* Using background color for dark text */
         }
@@ -92,12 +89,23 @@
                 <a href="#skills" class="text-secondary hover:text-primary transition-all">Skills</a>
                 <a href="#projects" class="text-secondary hover:text-primary transition-all">Projects</a>
             </nav>
-            <!-- Mobile Menu Button (Placeholder for JS functionality) -->
-            <button class="md:hidden text-secondary hover:text-primary transition-all">
-                <!-- Hamburger Icon SVG -->
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            <!-- Mobile Menu Button (Hamburger/Close Icon) -->
+            <button id="mobile-menu-button" type="button" class="md:hidden text-secondary hover:text-primary transition-all p-1" aria-controls="mobile-menu" aria-expanded="false">
+                <!-- Hamburger Icon -->
+                <svg id="icon-menu" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <!-- Close Icon (Hidden by default) -->
+                <svg id="icon-close" class="hidden w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </div>
+
+        <!-- Mobile Menu (Hidden by Default on all screens, MD breakpoint hides it via JS) -->
+        <nav id="mobile-menu" class="hidden md:hidden bg-background/95 pb-2 border-t border-card/50">
+            <div class="px-2 pt-2 pb-3 space-y-1 flex flex-col items-center">
+                <a href="#about" class="mobile-nav-link text-secondary hover:bg-primary/20 hover:text-primary block w-full text-center px-3 py-2 rounded-md text-base font-medium transition-colors">About</a>
+                <a href="#skills" class="mobile-nav-link text-secondary hover:bg-primary/20 hover:text-primary block w-full text-center px-3 py-2 rounded-md text-base font-medium transition-colors">Skills</a>
+                <a href="#projects" class="mobile-nav-link text-secondary hover:bg-primary/20 hover:text-primary block w-full text-center px-3 py-2 rounded-md text-base font-medium transition-colors">Projects</a>
+            </div>
+        </nav>
     </header>
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,7 +116,7 @@
                 Hello, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-counter transition-all">Brian Mohr</span>
             </h1>
             <p class="text-xl sm:text-2xl text-counter mb-8 max-w-3xl mx-auto">
-                Software Developer | Focused on clean code and user experience.
+                Software Developer | Determined to contribute meaningfully.
             </p>
             <div class="flex justify-center space-x-4">
                 <a href="#projects" class="px-8 py-3 bg-primary text-background font-bold rounded-lg shadow-xl hover:bg-counter transition-all transform hover:scale-105">
@@ -204,60 +212,60 @@
             <h2 class="text-4xl font-bold text-center mb-12 text-primary">Featured Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 
-                <!-- Project Card 1: E-commerce Platform -->
+                <!-- Project Card 1: Game of Cells -->
                 <div class="bg-card p-6 rounded-xl shadow-2xl hover:shadow-primary/50 transition-all transform hover:-translate-y-1 border border-card/80">
-                    <h3 class="text-2xl font-bold mb-3 text-background">Example</h3>
+                    <h3 class="text-2xl font-bold mb-3 text-background">Game of Cells</h3>
                     <p class="text-counter mb-4 h-20 overflow-hidden">
-                       Example description
+                       2D Educational Biology Game | Software Engineering Course Project
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">1</span>
-                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">2</span>
-                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">3</span>
-                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">4</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">Java</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">Git</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">Scrum</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">HTML</span>
                     </div>
                     <div class="flex justify-start space-x-3">
-                        <a href="#" target="_blank" class="text-primary hover:text-background font-medium transition-all flex items-center">
+                        <a href="https://github.com/bvmohr/GameOfCells" target="_blank" class="text-primary hover:text-background font-medium transition-all flex items-center">
                             Code (GitHub)
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-2h4m0 0l-4-4m4 4L11 6"></path></svg>
                         </a>
                     </div>
                 </div>
 
-                <!-- Project Card 2: Real-time Chat App -->
+                <!-- Project Card 2: Sentiment Classification -->
                 <div class="bg-card p-6 rounded-xl shadow-2xl hover:shadow-primary/50 transition-all transform hover:-translate-y-1 border border-card/80">
-                    <h3 class="text-2xl font-bold mb-3 text-background">Example 2</h3>
+                    <h3 class="text-2xl font-bold mb-3 text-background">Sentiment Classfication</h3>
                     <p class="text-counter mb-4 h-20 overflow-hidden">
-                        Example description
+                        Classifying sentences as positive/negative | AI Course Final Project
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">1</span>
-                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">2</span>
-                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">3</span>
-                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">4</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">Python</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">PyTorch</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">BERT</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">RNN</span>
                     </div>
                     <div class="flex justify-start space-x-3">
-                        <a href="#" target="_blank" class="text-primary hover:text-background font-medium transition-all flex items-center">
+                        <a href="https://github.com/bvmohr/sentimentClassificationAI" target="_blank" class="text-primary hover:text-background font-medium transition-all flex items-center">
                             Code (GitHub)
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-2h4m0 0l-4-4m4 4L11 6"></path></svg>
                         </a>
                     </div>
                 </div>
 
-                <!-- Project Card 3: Data Visualization Tool -->
+                <!-- Project Card 3: E-Commerce -->
                 <div class="bg-card p-6 rounded-xl shadow-2xl hover:shadow-primary/50 transition-all transform hover:-translate-y-1 border border-card/80">
-                    <h3 class="text-2xl font-bold mb-3 text-background">Example 3</h3>
+                    <h3 class="text-2xl font-bold mb-3 text-background">E-Commerce Website</h3>
                     <p class="text-counter mb-4 h-20 overflow-hidden">
-                        Example description
+                        Paradise Nursery E-Commerce Website | IBM's Developing Front-End Apps with React Project
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">1</span>
-                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">2</span>
-                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">3</span>
-                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">4</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">React</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">JavaScript</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">Redux</span>
+                        <span class="text-xs bg-primary/20 text-background px-3 py-1 rounded-full">GitHub</span>
                     </div>
                     <div class="flex justify-start space-x-3">
-                        <a href="#" target="_blank" class="text-primary hover:text-background font-medium transition-all flex items-center">
+                        <a href="https://github.com/bvmohr/e-plantShopping" target="_blank" class="text-primary hover:text-background font-medium transition-all flex items-center">
                             Code (GitHub)
                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4m-4-2h4m0 0l-4-4m4 4L11 6"></path></svg>
                         </a>
@@ -273,7 +281,6 @@
     <footer class="bg-card mt-16 border-t border-card">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
             <div class="flex justify-center space-x-6 mb-4">
-                <!-- Links now use the dark background color with the primary accent on hover -->
                 <a href="https://github.com/bvmohr" target="_blank" class="text-background hover:text-primary transition-colors">GitHub</a>
                 <a href="https://linkedin.com/in/brian-v-mohr" target="_blank" class="text-background hover:text-primary transition-colors">LinkedIn</a>
                 <a href="mailto:bvmohr2@gmail.com" class="text-background hover:text-primary transition-colors">Email</a>
@@ -283,6 +290,54 @@
             </p>
         </div>
     </footer>
+
+    <!-- JavaScript functionality for Hamburger menu -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.getElementById('mobile-menu-button');
+            const menu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('icon-menu');
+            const closeIcon = document.getElementById('icon-close');
+            // Select all links inside the mobile menu
+            const navLinks = document.querySelectorAll('.mobile-nav-link');
+
+            const toggleMenu = () => {
+                // Check if the menu is currently hidden
+                const isExpanded = menu.classList.contains('hidden');
+
+                // 1. Toggle menu visibility (hidden/visible)
+                menu.classList.toggle('hidden');
+                
+                // 2. Toggle icons and aria attributes (Hamburger <-> X)
+                if (isExpanded) {
+                    // Menu is opening
+                    menuIcon.classList.add('hidden');
+                    closeIcon.classList.remove('hidden');
+                    button.setAttribute('aria-expanded', 'true');
+                } else {
+                    // Menu is closing
+                    menuIcon.classList.remove('hidden');
+                    closeIcon.classList.add('hidden');
+                    button.setAttribute('aria-expanded', 'false');
+                }
+            };
+
+            // 1. Attach listener to the hamburger button
+            if (button) {
+                button.addEventListener('click', toggleMenu);
+            }
+            
+            // 2. Attach listeners to the mobile links to close the menu when navigating
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    // Only close if the menu is open (ensures smooth behavior)
+                    if (!menu.classList.contains('hidden')) {
+                        toggleMenu();
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
